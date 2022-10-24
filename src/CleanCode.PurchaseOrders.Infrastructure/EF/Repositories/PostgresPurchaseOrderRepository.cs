@@ -17,8 +17,8 @@ namespace CleanCode.PurchaseOrders.Infrastructure.EF.Repositories
             _purchaseOrders = _writeDbContext.PurchaseOrders;
         }
 
-        public Task<PurchaseOrder?> GetAsync(PurchaseOrderId id) =>
-            _purchaseOrders.Include("_items").SingleOrDefaultAsync(po => po.Id == id);
+        public Task<PurchaseOrder?> GetAsync(PurchaseOrderNumber purchaseOrderNumber) =>
+            _purchaseOrders.Include("_items").SingleOrDefaultAsync(po => po.PurchaseOrderNumber == purchaseOrderNumber);
 
         public async Task AddAsync(PurchaseOrder purchaseOrder)
         {

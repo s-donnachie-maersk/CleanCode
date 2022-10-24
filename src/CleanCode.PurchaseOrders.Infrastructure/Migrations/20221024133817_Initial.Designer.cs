@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CleanCode.PurchaseOrders.Infrastructure.Migrations
 {
     [DbContext(typeof(ReadDbContext))]
-    [Migration("20221024123318_Initial")]
+    [Migration("20221024133817_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

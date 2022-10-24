@@ -8,13 +8,14 @@ namespace CleanCode.PurchaseOrders.Domain.Entities
     public class PurchaseOrder : AggregateRoot<Guid>
     {
         public PurchaseOrderId Id { get; private set; } = new(Guid.NewGuid());
-        private PurchaseOrderNumber _purchaseOrderNumber;
+        public PurchaseOrderNumber PurchaseOrderNumber { get; private set; }
 
         private readonly LinkedList<InvoiceItem> _items = new();
 
         internal PurchaseOrder(PurchaseOrderNumber purchaseOrderNumber)
         {
-            _purchaseOrderNumber = purchaseOrderNumber;
+            PurchaseOrderNumber = purchaseOrderNumber;
+            AddEvent(new PurchaseOrderCreated(this));
         }
 
         private PurchaseOrder()

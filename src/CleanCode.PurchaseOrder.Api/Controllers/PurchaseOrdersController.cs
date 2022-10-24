@@ -32,5 +32,13 @@ namespace CleanCode.PurchaseOrder.Api.Controllers
             await _commandDispatcher.DispatchAsync(command);
             return CreatedAtAction(nameof(Get), new {purchaseOrderNumber = command.PurchaseOrderNumber}, null);
         }
+
+        
+        [HttpPut("{purchaseOrderNumber}/items")]
+        public async Task<IActionResult> Put([FromBody] AddInvoiceItem command)
+        {
+            await _commandDispatcher.DispatchAsync(command);
+            return Ok();
+        }
     }
 }

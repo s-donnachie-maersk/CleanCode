@@ -20,9 +20,8 @@ namespace CleanCode.PurchaseOrders.Infrastructure.EF.Config
                 .HasConversion(id => id.Value, id => new PurchaseOrderId(id));
 
             builder
-                .Property(typeof(PurchaseOrderNumber), "_purchaseOrderNumber")
-                .HasConversion(purchaseOrderNumber)
-                .HasColumnName("PurchaseOrderNumber");
+                .Property(pl => pl.PurchaseOrderNumber)
+                .HasConversion(purchaseOrderNumber);
 
             builder.HasMany(typeof(InvoiceItem), "_items");
 

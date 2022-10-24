@@ -29,6 +29,10 @@ namespace CleanCode.PurchaseOrders.Application.Commands.Handlers
             var purchaseOrder = _factory.Create(command.PurchaseOrderNumber);
 
             await _repository.AddAsync(purchaseOrder);
+
+            var events = purchaseOrder.Events;
+
+            // Send out generated events
         }
     }
 }
