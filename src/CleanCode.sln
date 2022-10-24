@@ -5,13 +5,17 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Shared", "0. Shared", "{BA38AC55-7458-4DAF-AE02-4F1B0A090152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode.Shared.Abstractions", "CleanCode.Shared.Abstractions\CleanCode.Shared.Abstractions.csproj", "{BCB8E390-046A-4669-B2F6-CFAF76FE7E76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.Shared.Abstractions", "CleanCode.Shared.Abstractions\CleanCode.Shared.Abstractions.csproj", "{BCB8E390-046A-4669-B2F6-CFAF76FE7E76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode.PurchaseOrders.Domain", "CleanCode.PurchaseOrders.Domain\CleanCode.PurchaseOrders.Domain.csproj", "{3CF04AC5-BEC4-4737-B839-D260D191B844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.PurchaseOrders.Domain", "CleanCode.PurchaseOrders.Domain\CleanCode.PurchaseOrders.Domain.csproj", "{3CF04AC5-BEC4-4737-B839-D260D191B844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode.PurchaseOrders.Infrastructure", "CleanCode.PurchaseOrders.Infrastructure\CleanCode.PurchaseOrders.Infrastructure.csproj", "{CDDEC03C-5610-42A1-A1DD-F5EB1890E70B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.PurchaseOrders.Infrastructure", "CleanCode.PurchaseOrders.Infrastructure\CleanCode.PurchaseOrders.Infrastructure.csproj", "{CDDEC03C-5610-42A1-A1DD-F5EB1890E70B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode.PurchaseOrders.Application", "CleanCode.PurchaseOrders.Application\CleanCode.PurchaseOrders.Application.csproj", "{667FAC25-23C4-4189-A1FE-2DC4E574F049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.PurchaseOrders.Application", "CleanCode.PurchaseOrders.Application\CleanCode.PurchaseOrders.Application.csproj", "{667FAC25-23C4-4189-A1FE-2DC4E574F049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode.Shared", "CleanCode.Shared\CleanCode.Shared.csproj", "{C11D9CED-DE82-481F-A3E2-190FB4029BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode.PurchaseOrder.Api", "CleanCode.PurchaseOrder.Api\CleanCode.PurchaseOrder.Api.csproj", "{7866B9AF-F204-4402-BC46-30B089103835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +39,21 @@ Global
 		{667FAC25-23C4-4189-A1FE-2DC4E574F049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{667FAC25-23C4-4189-A1FE-2DC4E574F049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{667FAC25-23C4-4189-A1FE-2DC4E574F049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11D9CED-DE82-481F-A3E2-190FB4029BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11D9CED-DE82-481F-A3E2-190FB4029BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11D9CED-DE82-481F-A3E2-190FB4029BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11D9CED-DE82-481F-A3E2-190FB4029BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7866B9AF-F204-4402-BC46-30B089103835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7866B9AF-F204-4402-BC46-30B089103835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7866B9AF-F204-4402-BC46-30B089103835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7866B9AF-F204-4402-BC46-30B089103835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BCB8E390-046A-4669-B2F6-CFAF76FE7E76} = {BA38AC55-7458-4DAF-AE02-4F1B0A090152}
+		{C11D9CED-DE82-481F-A3E2-190FB4029BBF} = {BA38AC55-7458-4DAF-AE02-4F1B0A090152}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07BFC2A1-73BB-486D-AB8E-59B795DBBE91}

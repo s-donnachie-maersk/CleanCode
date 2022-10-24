@@ -7,25 +7,23 @@ namespace CleanCode.PurchaseOrders.Domain.Entities
 {
     public class PurchaseOrder : AggregateRoot<Guid>
     {
-        public PurchaseOrderId Id { get; private set; }
-        public PurchaseOrderNumber PurchaseOrderNumber { get; private set; }
+        public PurchaseOrderId Id { get; private set; } = new(Guid.NewGuid());
+        private PurchaseOrderNumber _purchaseOrderNumber;
 
         private readonly LinkedList<InvoiceItem> _items = new();
 
-        internal PurchaseOrder(PurchaseOrderId id, PurchaseOrderNumber purchaseOrderNumber)
+        internal PurchaseOrder(PurchaseOrderNumber purchaseOrderNumber)
         {
-            Id = id;
-            PurchaseOrderNumber = purchaseOrderNumber;
+            _purchaseOrderNumber = purchaseOrderNumber;
         }
 
         private PurchaseOrder()
         {
-
         }
 
         public void AddItem(InvoiceItem item)
         {
-            var alreadyExists = _items.Any(x => x.InvoiceItemId == item.InvoiceItemId);
+            var alreadyExists = _items.Any(x => x.Description == item.Description);
 
             if (alreadyExists)
             {

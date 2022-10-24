@@ -5,6 +5,6 @@ namespace CleanCode.PurchaseOrders.Domain.Factories
 {
     public interface IPurchaseOrderFactory
     {
-        PurchaseOrder Create(PurchaseOrderId id, PurchaseOrderNumber purchaseOrderNumber);
+        PurchaseOrder Create(PurchaseOrderNumber purchaseOrderNumber);
     }
 }

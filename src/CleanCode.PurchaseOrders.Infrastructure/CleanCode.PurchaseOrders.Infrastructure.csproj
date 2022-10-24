@@ -16,7 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanCode.PurchaseOrders.Application\CleanCode.PurchaseOrders.Application.csproj" />
     <ProjectReference Include="..\CleanCode.PurchaseOrders.Domain\CleanCode.PurchaseOrders.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

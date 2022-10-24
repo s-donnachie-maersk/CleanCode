@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CleanCode.PurchaseOrders.Domain.Entities;
+﻿using CleanCode.PurchaseOrders.Domain.Entities;
 using CleanCode.PurchaseOrders.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CleanCode.PurchaseOrders.Infrastructure.EF.Config
 {
@@ -16,9 +12,17 @@ namespace CleanCode.PurchaseOrders.Infrastructure.EF.Config
         {
             builder.HasKey(pl => pl.Id);
 
+            var purchaseOrderNumber = new ValueConverter<PurchaseOrderNumber, string>(pln => pln.Value,
+                pln => new PurchaseOrderNumber(pln));
+
             builder
                 .Property(pl => pl.Id)
                 .HasConversion(id => id.Value, id => new PurchaseOrderId(id));
+
+            builder
+                .Property(typeof(PurchaseOrderNumber), "_purchaseOrderNumber")
+                .HasConversion(purchaseOrderNumber)
+                .HasColumnName("PurchaseOrderNumber");
 
             builder.HasMany(typeof(InvoiceItem), "_items");
 

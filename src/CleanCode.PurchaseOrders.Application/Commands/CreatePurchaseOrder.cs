@@ -2,5 +2,5 @@
 
 namespace CleanCode.PurchaseOrders.Application.Commands
 {
-    public record CreatePurchaseOrder(Guid Id, string PurchaseOrderNumber) : ICommand;
+    public record CreatePurchaseOrder(string PurchaseOrderNumber) : ICommand;
 }
